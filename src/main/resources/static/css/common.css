@@ -1,0 +1,85 @@
+/*공통요소*/
+
+@font-face {
+    font-family: 'GodoM';
+    src: url('../fonts/GodoM.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GodoB';
+    src: url('../fonts/GodoB.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumGothic';
+    src: url('../fonts/NanumGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumGothic Light';
+    src: url('../fonts/NanumGothicLight.ttf') format('truetype');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, select, input,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+ol, ul {
+    list-style: none;
+}
+* {
+    text-decoration-line: none;
+    color: black;
+}
+body{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'GodoM', sans-serif;
+}
+img {
+    vertical-align: top;
+}
+button {
+    cursor: pointer;
+}
+
+textarea, input {
+    outline-color: #009B55;
+    border: 0.0625em solid #B4B4B4;
+    border-radius: 0.625em;
+    font-family: 'GodoM', sans-serif;
+    font-size: 1.25em;
+}
+textarea::placeholder,
+input::placeholder {
+    color: lightgrey;
+}
+textarea:focus,
+input:focus {
+    background-color: #fafffa;
+}
+
+.animation, button {
+    transition: transform 0.1s ease;
+}
+.animation:hover {
+    cursor: pointer;
+    transform: scale(1.06); /* 이미지 커지는 애니메이션 */
+}
+.animation:active {
+    transform: scale(1.02);
+}
+/*공통요소*/

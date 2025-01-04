@@ -16,6 +16,7 @@ build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
+**/src/test/java/com/grinder/JasyptTest.java
 
 ### IntelliJ IDEA ###
 .idea

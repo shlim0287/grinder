@@ -1,0 +1,127 @@
+@import "common.css";
+
+
+body {
+    background: linear-gradient(to bottom right, #F5FFFA, white);
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    width: 100%;
+}
+
+.main_container .main_container-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 23em;
+    padding: 1.5em 1.5em;
+    border-radius: 0.8em;
+    border: 1px solid #D9D9D9;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1),
+    2px 0 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main_container .main_container-article .main-logo {
+    width: 10em;
+}
+
+.main_container .main_container-article input {
+    width: 100%;
+    height: 3em;
+    font-size: 0.8em;
+    padding-left: 2em;
+    border-radius: 0.4em;
+    border: 1px solid #D9D9D9;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1),
+    2px 0 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.main_container .main_container-article .form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.main_container .main_container-article .form-container div img {
+    position: relative;
+    top: 1.8em;
+    left: 0.4em;
+    width: 1em;
+}
+
+.main_container .main_container-article .form-container .btn-login {
+    width: 100%;
+    height: 2em;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: #009B55;
+    margin: 1.5em 0;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.main_container .main_container-article .a-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_container .main_container-article .a-wrap a {
+    color: grey;
+    font-size: 0.8em;
+}
+
+.main_container .main_container-article .a-wrap a:hover {
+    text-decoration: underline;
+}
+
+.main_container .main_container-article hr {
+    border: 1px solid #D9D9D9;
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+span {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.social-box1, .social-box2 , .social-box3{
+    width: 100%;
+    position: relative;
+}
+
+.social-box1 img, .social-box2 img, .social-box3 img {
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em;
+    width: 2em;
+}
+
+.social-box1 button, .social-box2 button, .social-box3 button {
+    font-family: GodoM;
+    width: 100%;
+    height: 3em;
+    color: grey;
+    font-size: 0.8em;
+    background-color: #ffffff;
+    margin-bottom: 0.5em;
+    padding-left: 3em;
+    cursor: pointer;
+    text-align: left;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4),
+    0 0 2px rgba(0, 0, 0, 0.2);
+}

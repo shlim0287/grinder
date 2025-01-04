@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로그인 - Grinder</title>
+    <link rel="icon" type="image/x-icon" href="/images/grinder.png"/>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<main class="main_container">
+    <article class="main_container-article">
+        <img src="/images/logo_img.png" alt="grinder_logo" class="main-logo">
+        <form th:action="@{/loginProcess}" method="post" class="form-container">
+            <div class="email-box">
+                <img src="/images/icon/BsPersonCircle.png" alt="member_img">
+                <label for="emailInput"></label>
+                <input id="emailInput" name="email" type="email" placeholder="이메일" required>
+            </div>
+            <div class="pw-box">
+                <img src="/images/icon/BsFillLockFill.png" alt="">
+                <label for="pwInput"></label>
+                <input id="pwInput" name="password" type="password" placeholder="비밀번호" required>
+            </div>
+            <button type="submit" class="btn-login">로그인</button>
+        </form>
+        <div class="a-wrap">
+            <a href="/register">회원가입</a>
+            <a href="/page/change/password">비밀번호를 잊어버리셨나요?</a>
+        </div>
+        <hr>
+        <span>다른 계정으로 로그인</span>
+
+        <div class="social-box1">
+            <button id="google-btn">
+                <img src="/images/icon/icon_google.png" alt="icon_google">
+                구글 계정으로 로그인</button>
+        </div>
+
+        <div class="social-box2">
+            <button id="naver-btn">
+                <img src="/images/icon/icon_naver.png" alt="icon_naver">
+                네이버 계정으로 로그인</button>
+        </div>
+
+        <div class="social-box3">
+            <button id="kakao-btn">
+                <img src="/images/icon/icon_kakao.png" alt="icon_kakao">
+                카카오 계정으로 로그인</button>
+        </div>
+    </article>
+</main>
+<div id="flashMessage" th:text="${message}" style="display: none;"></div>
+</body>
+<script src="/js/login.js"></script>
+<script>
+    const naverBtn = document.querySelector("#naver-btn");
+    const googleBtn = document.querySelector("#google-btn");
+    const kakaoBtn = document.querySelector("#kakao-btn");
+
+    naverBtn.addEventListener('click', () => {
+        window.location.href = '/oauth2/authorization/naver';
+    });
+
+    googleBtn.addEventListener('click', () => {
+        window.location.href = '/oauth2/authorization/google';
+    });
+    kakaoBtn.addEventListener('click', () => {
+        window.location.href = '/oauth2/authorization/kakao';
+    });
+</script>
+<script>
+    window.onload = function() {
+        const flashMessageElement = document.getElementById('flashMessage');
+        const message = flashMessageElement ? flashMessageElement.textContent.trim() : "";
+
+        if (message) {
+            alert(message);
+        }
+    }
+</script>
+</html>

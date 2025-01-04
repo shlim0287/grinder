@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - network
+    volumes:
+      # 디렉토리 마운트cker/설정
+        - ~/programs/doredis/data:/var/lib/redis
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: ENC(OEMvGF5oGPz/xEy0oqhE1wDc8uIYKbB7)
+      MYSQL_DATABASE: ENC(wuXQ9PLXeslCwzAPnOddiA==)
+      MYSQL_USER: ENC(EjG1sdmuQUnNVo3ZRyqbH3v0xRBhVIFt)
+      MYSQL_PASSWORD: ENC(XxybUbI0bVhVLRZGHmP1eIYzPa41RmFI)
+    restart: always
+    ports:
+      - "3307:3306" # 호스트 포트 3307을 컨테이너의 MySQL 기본 포트 3306으로 매핑
+    networks:
+      - network
+    volumes:
+      - mysql_data:/var/lib/mysql # 데이터 볼륨을 통해 MySQL 데이터를 호스트에 영구 저장
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/prometheus/prometheus.yml:ro
+    ports:
+      - "19090:9090"
+    command:
+      - "--web.enable-lifecycle"
+    restart: always
+    networks:
+      - network
+    user: root
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ./grafana-volume:/var/lib/grafana
+    restart: always
+    networks:
+      - network
+    ports:
+      - "13030:3000"
+    user: root
+
+volumes:
+  mysql_data:
+
+networks:
+  network:
+    driver: bridge

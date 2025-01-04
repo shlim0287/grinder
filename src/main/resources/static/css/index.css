@@ -1,0 +1,12 @@
+@import "common.css";
+
+.index-hot-cafe {
+    margin-top: 2.1875em;
+    font-size: 1.5625em;
+}
+
+.index-divide-line {
+    margin: 1em 0;
+    height: 0;
+    border-bottom: #d0d0d0 solid 0.0625em;
+}
